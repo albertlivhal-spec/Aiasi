@@ -20,7 +20,7 @@ app.add_middleware(
 
 # Конфигурация Hugging Face
 HF_TOKEN = os.getenv("HF_TOKEN")
-HF_API_URL = "https://api-inference.huggingface.co/models/microsoft/DialoGPT-medium"
+HF_API_URL = "https://api-inference.huggingface.co/models/gpt2"
 
 class ChatRequest(BaseModel):
     message: str
