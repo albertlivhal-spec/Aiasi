@@ -20,7 +20,7 @@ app.add_middleware(
 
 # Конфигурация Hugging Face
 HF_TOKEN = os.getenv("HF_TOKEN")
-HF_API_URL = "https://api-inference.huggingface.co/models/sberbank-ai/rugpt3small_based_on_gpt2"
+HF_API_URL = "https://api-inference.huggingface.co/models/microsoft/DialoGPT-medium"
 class ChatRequest(BaseModel):
     message: str
     history: List[Dict] = []
@@ -52,6 +52,8 @@ async def get_ai_response(message: str, history: List[Dict]) -> str:
         if response.status_code == 200:
             result = response.json()
             return result[0]['generated_text'].split("Assistant:")[-1].strip()
+        elif response.status_code == 503:  # 👈 ЭТО НОВАЯ СТРОКА
+            return "🤖 Модель загружается... Попробуйте через 30 секунд!"
         else:
             return f"Ошибка API: {response.status_code}"
             
