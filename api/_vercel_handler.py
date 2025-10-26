@@ -1,4 +1,4 @@
-from chat import app
+from .chat import app
 
 # Vercel требует именно "app"
 app = app
