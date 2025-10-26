@@ -90,3 +90,4 @@ async def health_check():
 
 # Vercel требует app
 app = app
+# HF_TOKEN added - Вс 26 окт 2025 23:44:58 MSK
