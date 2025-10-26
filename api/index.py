@@ -20,8 +20,7 @@ app.add_middleware(
 
 # Конфигурация Hugging Face
 HF_TOKEN = os.getenv("HF_TOKEN")
-HF_API_URL = "https://api-inference.huggingface.co/models/gpt2"
-
+HF_API_URL = "https://api-inference.huggingface.co/models/sberbank-ai/rugpt3small_based_on_gpt2"
 class ChatRequest(BaseModel):
     message: str
     history: List[Dict] = []
