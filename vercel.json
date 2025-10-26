@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "api/_vercel_handler.py",
+      "src": "api/index.py",
       "use": "@vercel/python"
     },
     {
@@ -17,7 +17,7 @@
     },
     {
       "src": "/api/(.*)",
-      "dest": "/api/_vercel_handler.py"
+      "dest": "/api/index.py"
     }
   ]
 }
